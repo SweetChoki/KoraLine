@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Dialog } from '@headlessui/react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { UserContext } from '../context/UserContext'
 
 const navigation = [
   { name: 'Inicio', href: '/' },
@@ -10,6 +11,13 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const {user, setUser} = useContext(UserContext)
+  const history = useNavigate();
+  const logout = () => {
+    setUser('')
+    history('/login')
+  }
 
   return (
     <div className="bg-gray-900">
@@ -45,9 +53,15 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <NavLink to="/login" className="text-sm font-semibold leading-6 text-black">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </NavLink>
+            {user  ? (
+              <button onClick={logout} className="text-sm font-semibold leading-6 text-black">
+                Log out 
+              </button>
+            ) : (
+              <NavLink to="/login" className="text-sm font-semibold leading-6 text-black">
+                Log in <span aria-hidden="true">&rarr;</span>
+              </NavLink>
+            )}
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
