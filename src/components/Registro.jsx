@@ -44,9 +44,7 @@ export const Registro = () => {
 
   return (
     <div className="font-sans antialiased bg-grey-lightest">
-  {/* <!-- Top Nav --> */}
-  
-  {/* <!-- Content --> */}
+
   <div className="w-full bg-grey-lightest pt-4" >
     <div className="container mx-auto py-8">
       <div className="w-5/6 lg:w-1/2 mx-auto bg-white rounded shadow">
@@ -56,20 +54,20 @@ export const Registro = () => {
                   <div className="flex mb-4">
                       <div className="w-1/2 mr-1">
                           <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="first_name">Nombre</label>
-                          <input className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="first_name" type="text" placeholder="Your first name"/>
+                          <input className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="first_name" type="text" placeholder="Ingrese su nombre"/>
                       </div>
                       <div className="w-1/2 ml-1">
                           <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="last_name">Apellido</label>
-                          <input className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="last_name" type="text" placeholder="Your last name"/>
+                          <input className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="last_name" type="text" placeholder="Ingrese su apellido"/>
                       </div>
                   </div>
                   <div className="mb-4">
                       <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="email">Email</label>
-                      <input value={email} onChange={(e) => setEmail(e.target.value)} className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="email" type="email" placeholder="Your email address"/>
+                      <input value={email} onChange={(e) => setEmail(e.target.value)} className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="email" type="email" placeholder="Dirección de correo"/>
                   </div>
                   <div className="mb-4">
                       <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="password">Constraseña</label>
-                      <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="password" type="password" placeholder="Your secure password"/>
+                      <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="password" type="password" placeholder="Ingrese una contraseña"/>
                       
                   </div>
                   {error && (
@@ -77,7 +75,7 @@ export const Registro = () => {
                   )}
                   <div className="flex items-center justify-between mt-8">
                       <button className="bg-blue-600 w-full text-white hover:bg-blue-800 font-bold py-2 px-4 rounded-full" type="submit">
-                          Sign Up
+                          Registrarse
                       </button>
                   </div>
               </div>

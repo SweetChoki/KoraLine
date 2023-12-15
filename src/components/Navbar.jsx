@@ -6,7 +6,7 @@ import { UserContext } from '../context/UserContext'
 const navigation = [
   { name: 'Inicio', href: '/' },
   { name: 'Acerca de nosotros', href: '/aboutus' },
-  { name: 'Contacto', href: '/contact' },
+  { name: 'Tareas', href: '/tareas' },
 ]
 
 export default function Navbar() {
@@ -55,11 +55,11 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {user  ? (
               <button onClick={logout} className="text-sm font-semibold leading-6 text-black">
-                Log out 
+                Cerrar sesión 
               </button>
             ) : (
               <NavLink to="/login" className="text-sm font-semibold leading-6 text-black">
-                Log in <span aria-hidden="true">&rarr;</span>
+                Iniciar sesión <span aria-hidden="true">&rarr;</span>
               </NavLink>
             )}
           </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
                     href="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >
-                    Log in
+                    Iniciar Sesión
                   </a>
                 </div>
               </div>
